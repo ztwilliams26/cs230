@@ -1,0 +1,7 @@
+Video Link: https://youtu.be/rw4putFU5xo
+
+
+Main: This is the function that is used to create the number of threads (phone calls) and from there joins them back. This is also where both the semaphores are initialized and destroyed after their tasks are done.
+
+phonecall: This function is the function that is run by the threads. In it each thread runs through and gets to the first binary semaphore lock, where one thread at a time can go to the critical section (connect to the line). This one allows only one thread at a time to go past, then it will check to see if there are less than 5 threads running this section, is so the current thread continues and increments amount of threads in section by one, represented by callers on the line. There is a second counting semaphore that will let 3 threads continue through, represents 3 operators communicating with the callers, and then the process sleeps for 3 seconds then ends as the function (this represents a ticket being bought). Afterwards the thread returns back to the main function where it is joined back.
+
